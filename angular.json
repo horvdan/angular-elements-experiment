@@ -31,16 +31,18 @@
               "projects/my-element/tsconfig.lib.json",
               "projects/my-element/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "exclude": ["**/node_modules/**"]
           }
         }
       }
     },
     "wrapper-application": {
       "projectType": "application",
-      "schematics": {},
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
       "root": "projects/wrapper-application",
       "sourceRoot": "projects/wrapper-application/src",
       "prefix": "app",
@@ -53,14 +55,12 @@
             "main": "projects/wrapper-application/src/main.ts",
             "polyfills": "projects/wrapper-application/src/polyfills.ts",
             "tsConfig": "projects/wrapper-application/tsconfig.app.json",
-            "aot": false,
+            "aot": true,
             "assets": [
               "projects/wrapper-application/src/favicon.ico",
               "projects/wrapper-application/src/assets"
             ],
-            "styles": [
-              "projects/wrapper-application/src/styles.css"
-            ],
+            "styles": ["projects/wrapper-application/src/styles.scss"],
             "scripts": []
           },
           "configurations": {
@@ -123,9 +123,7 @@
               "projects/wrapper-application/src/favicon.ico",
               "projects/wrapper-application/src/assets"
             ],
-            "styles": [
-              "projects/wrapper-application/src/styles.css"
-            ],
+            "styles": ["projects/wrapper-application/src/styles.scss"],
             "scripts": []
           }
         },
@@ -137,9 +135,7 @@
               "projects/wrapper-application/tsconfig.spec.json",
               "projects/wrapper-application/e2e/tsconfig.json"
             ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "exclude": ["**/node_modules/**"]
           }
         },
         "e2e": {
@@ -155,6 +151,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "my-element"
+    }
+  },
+  "defaultProject": "wrapper-application",
+  "cli": {
+    "defaultCollection": "@datorama/akita"
+  }
 }

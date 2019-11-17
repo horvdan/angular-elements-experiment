@@ -1,0 +1,15 @@
+<h3>Custom Element</h3>
+<ng-container [ngSwitch]="view">
+  <div *ngSwitchCase="1">
+    1
+  </div>
+  <div *ngSwitchCase="2">
+    2
+  </div>
+  <div *ngSwitchCase="3">
+    3
+  </div>
+</ng-container>
+<button (click)="setView(1)">Set to 1</button>
+<button (click)="setView(2)">Set to 2</button>
+<button (click)="setView(3)">Set to 3</button>

@@ -1,19 +1,22 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from "@angular/core";
 
 @Component({
-  selector: 'lib-my-element',
-  template: `
-    <p>
-      my-element works!
-    </p>
-  `,
-  styles: []
+  selector: "lib-my-element",
+  templateUrl: "./my-element.component.html",
+  styles: [
+    `
+      :root() {
+        background-color: #bebebe;
+      }
+    `
+  ]
 })
 export class MyElementComponent implements OnInit {
+  view = 1;
 
-  constructor() { }
+  ngOnInit() {}
 
-  ngOnInit() {
+  setView(view: number) {
+    this.view = view;
   }
-
 }

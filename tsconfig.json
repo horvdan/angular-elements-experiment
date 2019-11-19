@@ -24,6 +24,12 @@
       ],
       "my-element/*": [
         "dist/my-element/*"
+      ],
+      "my-custom-element": [
+        "dist/my-custom-element"
+      ],
+      "my-custom-element/*": [
+        "dist/my-custom-element/*"
       ]
     }
   },

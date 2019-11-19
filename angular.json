@@ -151,6 +151,41 @@
           }
         }
       }
+    },
+    "my-custom-element": {
+      "projectType": "library",
+      "root": "projects/my-custom-element",
+      "sourceRoot": "projects/my-custom-element/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/my-custom-element/tsconfig.lib.json",
+            "project": "projects/my-custom-element/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/my-custom-element/src/test.ts",
+            "tsConfig": "projects/my-custom-element/tsconfig.spec.json",
+            "karmaConfig": "projects/my-custom-element/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/my-custom-element/tsconfig.lib.json",
+              "projects/my-custom-element/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "wrapper-application",

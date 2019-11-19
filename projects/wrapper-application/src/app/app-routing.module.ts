@@ -11,8 +11,15 @@ const routes: Routes = [
   {
     path: "my-element",
     loadChildren: () =>
-      import("./custom-element-view/custom-element-view.module").then(
-        m => m.CustomElementViewModule
+      import("./my-element-view/my-element-view.module").then(
+        m => m.MyElementViewModule
+      )
+  },
+  {
+    path: "my-custom-element",
+    loadChildren: () =>
+      import("./my-custom-element-view/my-custom-element-view.module").then(
+        m => m.MyCustomElementViewModule
       )
   },
   {
